@@ -12,17 +12,15 @@
 		0AEEFBFA2378C97300CFF2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFBF92378C97300CFF2D9 /* ViewController.swift */; };
 		0AEEFBFD2378C97300CFF2D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEEFBFB2378C97300CFF2D9 /* Main.storyboard */; };
 		0AEEFBFF2378C97800CFF2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEEFBFE2378C97800CFF2D9 /* Assets.xcassets */; };
-		0AEEFC022378C97800CFF2D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEEFC002378C97800CFF2D9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AEEFBF22378C97300CFF2D9 /* Porchster_Demo_iPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Porchster_Demo_iPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEEFBF22378C97300CFF2D9 /* Porchster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Porchster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEEFBF52378C97300CFF2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEEFBF72378C97300CFF2D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0AEEFBF92378C97300CFF2D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AEEFBFC2378C97300CFF2D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AEEFBFE2378C97800CFF2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0AEEFC012378C97800CFF2D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEEFC032378C97800CFF2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +46,7 @@
 		0AEEFBF32378C97300CFF2D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AEEFBF22378C97300CFF2D9 /* Porchster_Demo_iPhoneApp.app */,
+				0AEEFBF22378C97300CFF2D9 /* Porchster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,7 +59,6 @@
 				0AEEFBF92378C97300CFF2D9 /* ViewController.swift */,
 				0AEEFBFB2378C97300CFF2D9 /* Main.storyboard */,
 				0AEEFBFE2378C97800CFF2D9 /* Assets.xcassets */,
-				0AEEFC002378C97800CFF2D9 /* LaunchScreen.storyboard */,
 				0AEEFC032378C97800CFF2D9 /* Info.plist */,
 			);
 			path = Porchster_Demo_iPhoneApp;
@@ -70,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AEEFBF12378C97300CFF2D9 /* Porchster_Demo_iPhoneApp */ = {
+		0AEEFBF12378C97300CFF2D9 /* Porchster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AEEFC062378C97800CFF2D9 /* Build configuration list for PBXNativeTarget "Porchster_Demo_iPhoneApp" */;
+			buildConfigurationList = 0AEEFC062378C97800CFF2D9 /* Build configuration list for PBXNativeTarget "Porchster" */;
 			buildPhases = (
 				0AEEFBEE2378C97300CFF2D9 /* Sources */,
 				0AEEFBEF2378C97300CFF2D9 /* Frameworks */,
@@ -82,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = Porchster_Demo_iPhoneApp;
+			name = Porchster;
 			productName = Porchster_Demo_iPhoneApp;
-			productReference = 0AEEFBF22378C97300CFF2D9 /* Porchster_Demo_iPhoneApp.app */;
+			productReference = 0AEEFBF22378C97300CFF2D9 /* Porchster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0AEEFBED2378C97300CFF2D9 /* Build configuration list for PBXProject "Porchster_Demo_iPhoneApp" */;
+			buildConfigurationList = 0AEEFBED2378C97300CFF2D9 /* Build configuration list for PBXProject "Porchster" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AEEFBF12378C97300CFF2D9 /* Porchster_Demo_iPhoneApp */,
+				0AEEFBF12378C97300CFF2D9 /* Porchster */,
 			);
 		};
 /* End PBXProject section */
@@ -125,7 +122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AEEFC022378C97800CFF2D9 /* LaunchScreen.storyboard in Resources */,
 				0AEEFBFF2378C97800CFF2D9 /* Assets.xcassets in Resources */,
 				0AEEFBFD2378C97300CFF2D9 /* Main.storyboard in Resources */,
 			);
@@ -153,14 +149,6 @@
 				0AEEFBFC2378C97300CFF2D9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0AEEFC002378C97800CFF2D9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0AEEFC012378C97800CFF2D9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,6 +275,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HT686LGPQ;
 				INFOPLIST_FILE = Porchster_Demo_iPhoneApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MIDK-Engineering.Porchster-Demo-iPhoneApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +294,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HT686LGPQ;
 				INFOPLIST_FILE = Porchster_Demo_iPhoneApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,14 +302,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MIDK-Engineering.Porchster-Demo-iPhoneApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AEEFBED2378C97300CFF2D9 /* Build configuration list for PBXProject "Porchster_Demo_iPhoneApp" */ = {
+		0AEEFBED2378C97300CFF2D9 /* Build configuration list for PBXProject "Porchster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AEEFC042378C97800CFF2D9 /* Debug */,
@@ -328,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AEEFC062378C97800CFF2D9 /* Build configuration list for PBXNativeTarget "Porchster_Demo_iPhoneApp" */ = {
+		0AEEFC062378C97800CFF2D9 /* Build configuration list for PBXNativeTarget "Porchster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AEEFC072378C97800CFF2D9 /* Debug */,
