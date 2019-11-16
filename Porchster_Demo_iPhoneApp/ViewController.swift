@@ -17,9 +17,9 @@ let Porchster_Service_CBUUID = CBUUID(string: "4fafc201-1fb5-459e-8fcc-c5c9c3319
 
 // MARK: - Core Bluetooth characteristic IDs
 let Porchster_Solenoid_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f5-ea07361b26b7")
-let Livewell_OFFTIME_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f6-ea07361b26b7")
-let Livewell_ONTIME_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f7-ea07361b26c8")
-let Livewell_TIMER_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f8-ea07361b26d9")
+let Porchster_Scanner_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f6-ea07361b26c8")
+let Livewell_ONTIME_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f7-ea07361b26d9")
+let Livewell_TIMER_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f8-ea07361b26a1")
 
 
 
@@ -37,18 +37,20 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
     @IBOutlet weak var Lock_Unlock_Button: UIButton!
     var isPressed = false
     
+    @IBOutlet weak var barcodeNumberLabel: UILabel!
+    
     @IBAction func didPressButton(_ sender: UIButton) {
         isPressed = !isPressed
         if isPressed {
-            print("UNLOCK")
-            sender.setTitle("UNLOCK", for: .normal)
+            print("LOCK")
+            sender.setTitle("LOCK", for: .normal)
             let PorchsterState = "1"
             let data = Data(PorchsterState.utf8)
             print("data = ", data)
             writeonStateValueToChar(withCharacteristic: LockState!, withValue: data)
         } else {
-            print("LOCK")
-            sender.setTitle("LOCK", for: .normal)
+            print("UNLOCK")
+            sender.setTitle("UNLOCK", for: .normal)
             let SwitchState = "0"
             let data = Data(SwitchState.utf8)
             print("data = ", data)
@@ -58,6 +60,7 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
     
     // Characteristics
     private var LockState: CBCharacteristic?
+    private var Barcode_Scanner_Value: CBCharacteristic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,6 +175,11 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
             
             print("Characteristic: \(characteristic)")
             
+            if characteristic.uuid == Porchster_Scanner_Characteristic_CBUUID{
+                print("Barcode Scanner Characteristic")
+                peripheral.setNotifyValue(true, for: characteristic)
+            }
+            
             if characteristic.uuid == Porchster_Solenoid_Characteristic_CBUUID{
                 print("Lock State Characteristic")
                 LockState = characteristic
@@ -200,5 +208,21 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
         }
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+        if characteristic.uuid == Porchster_Scanner_Characteristic_CBUUID {
+            
+            // STEP 14: we generally have to decode BLE
+            // data into human readable format
+            let barcode_number = [UInt8](characteristic.value!)
+            
+            print("Barcode", barcode_number[0])
+
+            DispatchQueue.main.async { () -> Void in
+                self.barcodeNumberLabel.text = String(barcode_number[0])
+            }
+        } // END if characteristic.uuid ==...
+        
+    } // END func peripheral(... didUpdateValueFor characteristic
 }
 
