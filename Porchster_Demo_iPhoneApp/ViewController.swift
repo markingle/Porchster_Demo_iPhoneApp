@@ -42,8 +42,8 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
     @IBAction func didPressButton(_ sender: UIButton) {
         isPressed = !isPressed
         if isPressed {
-            print("LOCK")
-            sender.setTitle("LOCK", for: .normal)
+            print("OPENED")
+            sender.setTitle("OPENED", for: .normal)
             let PorchsterState = "1"
             let data = Data(PorchsterState.utf8)
             print("data = ", data)
@@ -190,6 +190,7 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
             if characteristic.uuid == Porchster_Solenoid_Characteristic_CBUUID{
                 print("Lock State Characteristic")
                 LockState = characteristic
+                peripheral.setNotifyValue(true, for: characteristic)
             }
         }
     } // END func peripheral(... didDiscoverCharacteristicsFor service
@@ -232,6 +233,28 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
             DispatchQueue.main.async { () -> Void in
                 self.barcodeNumberLabel.text = "Scan: \(barcode_number!)"
             }
+        } // END if characteristic.uuid ==...
+        
+        if characteristic.uuid == Porchster_Solenoid_Characteristic_CBUUID {
+            
+            // STEP 14: we generally have to decode BLE
+            // data into human readable format
+            //let barcode_number = [UInt8](characteristic.value!)
+            //let data = [UInt8](characteristic.value!)
+            let unlock_switch = [UInt8](characteristic.value!)
+            print("Unlock State", unlock_switch[0])
+            if unlock_switch[0] == 1 {
+                print("UNLOCK")
+                DispatchQueue.main.async { () -> Void in
+                    self.Lock_Unlock_Button.setTitle("UNLOCK", for: .normal)
+                }
+                let SwitchState = "0"
+                isPressed = !isPressed
+                let data = Data(SwitchState.utf8)
+                print("data = ", data)
+                writeonStateValueToChar(withCharacteristic: LockState!, withValue: data)
+            }
+            
         } // END if characteristic.uuid ==...
         
     } // END func peripheral(... didUpdateValueFor characteristic
