@@ -67,6 +67,7 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
         // Do any additional setup after loading the view.
         
         bluetoothOffLabel.alpha = 0.0
+        barcodeNumberLabel.text = "...waiting on scan"
         
         // Create a concurrent background queue for the central
         let centralQueue: DispatchQueue = DispatchQueue(label: "com.iosbrain.centralQueueName", attributes: .concurrent)
@@ -76,6 +77,12 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
         centralManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
 
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
@@ -187,6 +194,8 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
         }
     } // END func peripheral(... didDiscoverCharacteristicsFor service
     
+    
+    
     func decodePeripheralState(peripheralState: CBPeripheralState) {
     
     switch peripheralState {
@@ -214,12 +223,14 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
             
             // STEP 14: we generally have to decode BLE
             // data into human readable format
-            let barcode_number = [UInt8](characteristic.value!)
-            
-            print("Barcode", barcode_number[0])
+            //let barcode_number = [UInt8](characteristic.value!)
+            //let data = [UInt8](characteristic.value!)
+            let barcode_number = String(data: characteristic.value!, encoding: String.Encoding.utf8)
+            print("Scanned Barcode", barcode_number!)
+            print("Barcode", barcode_number!)
 
             DispatchQueue.main.async { () -> Void in
-                self.barcodeNumberLabel.text = String(barcode_number[0])
+                self.barcodeNumberLabel.text = "Scan: \(barcode_number!)"
             }
         } // END if characteristic.uuid ==...
         
