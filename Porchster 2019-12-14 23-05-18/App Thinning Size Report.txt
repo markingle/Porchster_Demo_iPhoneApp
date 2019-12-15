@@ -1,0 +1,15 @@
+
+App Thinning Size Report for All Variants of Porchster
+
+Variant: Porchster-4E55FB3D-4B98-4A14-9ED5-6BDA233A50FA.ipa
+Supported variant descriptors: [device: iPhone8,1, os-version: 13.0], [device: iPhone8,4, os-version: 13.0], and [device: iPod9,1, os-version: 13.0]
+App + On Demand Resources size: 59 KB compressed, 171 KB uncompressed
+App size: 59 KB compressed, 171 KB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: Porchster-F7EC18D4-CCC1-46ED-BAA6-A6CD34624982.ipa
+Supported variant descriptors: [device: iPhone7,2, os-version: 12.2], [device: iPhone8,1, os-version: 12.2], [device: iPhone8,4, os-version: 12.2], [device: iPhone6,2, os-version: 12.2], [device: iPhone6,1, os-version: 12.2], [device: iPod7,1, os-version: 12.2], and [device: iPod9,1, os-version: 12.2]
+App + On Demand Resources size: 59 KB compressed, 172 KB uncompressed
+App size: 59 KB compressed, 172 KB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Porchster.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>9398C360D2050D31496177F38BA2E33A511FE56C</string>
+				<key>dateExpires</key>
+				<string>12/13/20</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>9HT686LGPQ.com.MIDKEngineering.Porchster</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>9HT686LGPQ</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>9HT686LGPQ.com.MIDKEngineering.Porchster</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>Porchster.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>fbc95f96-58eb-42a5-85bd-f950fcff1f65</string>
+				<key>name</key>
+				<string>Porchster_Adhoc_Profile</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>9HT686LGPQ</string>
+				<key>name</key>
+				<string>Mark Ingle</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
