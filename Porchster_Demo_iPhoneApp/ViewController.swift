@@ -39,6 +39,7 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
     
     @IBOutlet weak var barcodeNumberLabel: UILabel!
     
+    
     @IBAction func didPressButton(_ sender: UIButton) {
         isPressed = !isPressed
         if isPressed {
@@ -65,7 +66,7 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        Lock_Unlock_Button.isEnabled = false
         bluetoothOffLabel.alpha = 0.0
         barcodeNumberLabel.text = "...waiting on scan"
         
@@ -76,7 +77,6 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
         // manage, and collect data from peripherals
         centralManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -138,6 +138,11 @@ class ViewController: UIViewController,CBCentralManagerDelegate, CBPeripheralDel
        
        // STEP 6: connect to the discovered peripheral of interest
        centralManager?.connect(PorchsterLockbox!)
+       DispatchQueue.main.async {
+            self.Lock_Unlock_Button.isEnabled = true
+        }
+        
+    
        
    } // END func centralManager(... didDiscover peripheral
     
